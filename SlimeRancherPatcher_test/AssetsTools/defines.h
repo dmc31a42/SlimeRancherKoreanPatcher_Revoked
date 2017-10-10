@@ -35,3 +35,13 @@ typedef QWORD(_cdecl *AssetsFileWriter)(QWORD pos, QWORD count, const void *pBuf
 typedef void(_cdecl *cbFreeMemoryResource)(void *pResource);
 typedef void(_cdecl *cbFreeReaderResource)(AssetsFileReader reader, LPARAM readerPar);
 #endif
+#ifndef __AssetsTools_Hash128
+#define __AssetsTools_Hash128
+union Hash128
+{
+	BYTE bValue[16];
+	WORD wValue[8];
+	DWORD dValue[4];
+	QWORD qValue[2];
+};
+#endif

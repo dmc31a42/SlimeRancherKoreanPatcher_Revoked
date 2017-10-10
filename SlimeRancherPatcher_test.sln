@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.13
+VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SlimeRancherPatcher_test", "SlimeRancherPatcher_test\SlimeRancherPatcher_test.vcxproj", "{57EDAFC9-FDC9-405F-85BF-DF086CEC5ED2}"
 EndProject
@@ -12,6 +12,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sharedassets0Editor", "sharedassets0Editor\sharedassets0Editor.csproj", "{6BB7146C-0674-4CF6-9EB8-E13E1FF67456}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlimeRancherModMaker", "TextDatExtract\SlimeRancherModMaker.csproj", "{A6397361-A8EF-4045-9745-BD24347DB5F9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SlimeRancherKoreanPatcher_managedCpp", "SlimeRancherKoreanPatcher_managedCpp\SlimeRancherKoreanPatcher_managedCpp.vcxproj", "{88508AC1-609F-44AF-A593-C655796B648E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SlimeRancherKoreanPatcher_cpp", "SlimeRancherKoreanPatcher_cpp\SlimeRancherKoreanPatcher_cpp.vcxproj", "{9C14FE3D-2964-4F42-9045-700487B1C890}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlimeRancherKoreanPatcher_cshop", "SlimeRancherKoreanPatcher_cshop\SlimeRancherKoreanPatcher_cshop.csproj", "{30CC5047-759E-46A0-86E6-9F8CB22A323F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,8 +81,43 @@ Global
 		{A6397361-A8EF-4045-9745-BD24347DB5F9}.Release|Win32.Build.0 = Release|Any CPU
 		{A6397361-A8EF-4045-9745-BD24347DB5F9}.Release|x64.ActiveCfg = Release|Any CPU
 		{A6397361-A8EF-4045-9745-BD24347DB5F9}.Release|x64.Build.0 = Release|Any CPU
+		{88508AC1-609F-44AF-A593-C655796B648E}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{88508AC1-609F-44AF-A593-C655796B648E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{88508AC1-609F-44AF-A593-C655796B648E}.Debug|Win32.Build.0 = Debug|Win32
+		{88508AC1-609F-44AF-A593-C655796B648E}.Debug|x64.ActiveCfg = Debug|x64
+		{88508AC1-609F-44AF-A593-C655796B648E}.Debug|x64.Build.0 = Debug|x64
+		{88508AC1-609F-44AF-A593-C655796B648E}.Release|Any CPU.ActiveCfg = Release|Win32
+		{88508AC1-609F-44AF-A593-C655796B648E}.Release|Win32.ActiveCfg = Release|Win32
+		{88508AC1-609F-44AF-A593-C655796B648E}.Release|Win32.Build.0 = Release|Win32
+		{88508AC1-609F-44AF-A593-C655796B648E}.Release|x64.ActiveCfg = Release|x64
+		{88508AC1-609F-44AF-A593-C655796B648E}.Release|x64.Build.0 = Release|x64
+		{9C14FE3D-2964-4F42-9045-700487B1C890}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{9C14FE3D-2964-4F42-9045-700487B1C890}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9C14FE3D-2964-4F42-9045-700487B1C890}.Debug|Win32.Build.0 = Debug|Win32
+		{9C14FE3D-2964-4F42-9045-700487B1C890}.Debug|x64.ActiveCfg = Debug|x64
+		{9C14FE3D-2964-4F42-9045-700487B1C890}.Debug|x64.Build.0 = Debug|x64
+		{9C14FE3D-2964-4F42-9045-700487B1C890}.Release|Any CPU.ActiveCfg = Release|Win32
+		{9C14FE3D-2964-4F42-9045-700487B1C890}.Release|Win32.ActiveCfg = Release|Win32
+		{9C14FE3D-2964-4F42-9045-700487B1C890}.Release|Win32.Build.0 = Release|Win32
+		{9C14FE3D-2964-4F42-9045-700487B1C890}.Release|x64.ActiveCfg = Release|x64
+		{9C14FE3D-2964-4F42-9045-700487B1C890}.Release|x64.Build.0 = Release|x64
+		{30CC5047-759E-46A0-86E6-9F8CB22A323F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30CC5047-759E-46A0-86E6-9F8CB22A323F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30CC5047-759E-46A0-86E6-9F8CB22A323F}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{30CC5047-759E-46A0-86E6-9F8CB22A323F}.Debug|Win32.Build.0 = Debug|Any CPU
+		{30CC5047-759E-46A0-86E6-9F8CB22A323F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{30CC5047-759E-46A0-86E6-9F8CB22A323F}.Debug|x64.Build.0 = Debug|Any CPU
+		{30CC5047-759E-46A0-86E6-9F8CB22A323F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30CC5047-759E-46A0-86E6-9F8CB22A323F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30CC5047-759E-46A0-86E6-9F8CB22A323F}.Release|Win32.ActiveCfg = Release|Any CPU
+		{30CC5047-759E-46A0-86E6-9F8CB22A323F}.Release|Win32.Build.0 = Release|Any CPU
+		{30CC5047-759E-46A0-86E6-9F8CB22A323F}.Release|x64.ActiveCfg = Release|Any CPU
+		{30CC5047-759E-46A0-86E6-9F8CB22A323F}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D24053D9-C1FD-4780-AF18-DF45C01FBD85}
 	EndGlobalSection
 EndGlobal

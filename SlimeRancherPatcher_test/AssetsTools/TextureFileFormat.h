@@ -19,8 +19,8 @@ struct TextureFile
 	int m_MipCount;					//added with 5.2.x //0x10
 	bool m_MipMap;					//0x10 or non-existant
 	bool m_IsReadable;				//0x11 or 0x14
-	bool m_ReadAllowed;				//0x12 or 0x15
-	bool padding1;					//0x13 or 0x16
+	bool m_ReadAllowed;				//0x12 or 0x15 or non-existant
+	bool padding1;					//0x13 or 0x16 or ...
 	int m_ImageCount;				//0x14 or 0x18
 	int m_TextureDimension;			//0x18 or 0x1C; Flags : 0x40, 0x10, 0x02, 0x01
 	struct GLTextureSettings
@@ -66,10 +66,10 @@ enum TextureFormat { //by disunity and UnityEngine.dll
 	TexFmt_YUV2,
 	TexFmt_UNUSED22,
 	TexFmt_UNUSED23,
-	TexFmt_UNUSED24,
-	TexFmt_UNUSED25,
-	TexFmt_UNUSED26,
-	TexFmt_UNUSED27,
+	TexFmt_BC6H, //Unity 5.5
+	TexFmt_BC7, //Unity 5.5
+	TexFmt_BC4, //Unity 5.5
+	TexFmt_BC5, //Unity 5.5
 	TexFmt_DXT1Crunched,
 	TexFmt_DXT5Crunched,
 	TexFmt_PVRTC_RGB2,

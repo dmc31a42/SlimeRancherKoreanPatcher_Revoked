@@ -31,7 +31,8 @@ class BundleReplacer
 
 		virtual bool Init(class AssetsBundleFile *pBundleFile, 
 			AssetsFileReader entryReader, LPARAM entryReaderPar, 
-			QWORD entryPos, QWORD entrySize) = 0;
+			QWORD entryPos, QWORD entrySize,
+			ClassDatabaseFile *typeMeta = NULL) = 0;
 		virtual void Uninit() = 0;
 
 		//should allow writes multiple times (although probably not used)

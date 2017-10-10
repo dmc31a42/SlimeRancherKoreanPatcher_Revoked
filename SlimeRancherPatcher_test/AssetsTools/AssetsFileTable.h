@@ -6,6 +6,9 @@
 class AssetFileInfoEx : public AssetFileInfo
 {
 	public:
+		//AssetsHeader format < 0x10 : equals curFileTypeOrIndex
+		//AssetsHeader format >= 0x10 : equals TypeTree.pTypes_Unity5[curFileTypeOrIndex].classId or (DWORD)-2 if the index is out of bounds
+		DWORD curFileType;
 		QWORD absolutePos;
 		char name[100];
 };
@@ -31,7 +34,8 @@ class AssetsFileTable
 		ASSETSTOOLS_API AssetFileInfoEx *getAssetInfo(const char *name);
 		ASSETSTOOLS_API AssetFileInfoEx *getAssetInfo(const char *name, DWORD type);
 		ASSETSTOOLS_API AssetFileInfoEx *getAssetInfo(QWORD pathId);
-
+		
+		ASSETSTOOLS_API AssetsFile *getAssetsFile();
 		ASSETSTOOLS_API AssetsFileReader getReader();
 		ASSETSTOOLS_API LPARAM getReaderPar();
 };

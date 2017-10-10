@@ -4,6 +4,7 @@
 
 //Creates a reader that can read split .assets files (opens all at once)
 ASSETSTOOLS_API LPARAM Create_AssetsReaderFromSplitFile(const char *baseFileName);
+ASSETSTOOLS_API LPARAM Create_AssetsReaderFromSplitFileW(const wchar_t *baseFileName);
 ASSETSTOOLS_API void Free_AssetsReaderFromSplitFile(LPARAM lParam);
 ASSETSTOOLS_API QWORD AssetsReaderFromSplitFile(QWORD pos, QWORD count, void *pBuf, LPARAM par);
 

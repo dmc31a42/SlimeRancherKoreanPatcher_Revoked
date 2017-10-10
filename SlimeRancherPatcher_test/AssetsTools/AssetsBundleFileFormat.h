@@ -3,6 +3,7 @@
 #define __AssetsTools__AssetsBundleFormat_Header
 #include "defines.h"
 #include "BundleReplacer.h"
+#include "ClassDatabaseFile.h"
 
 class AssetsBundleFile;
 struct AssetsBundleHeader06;
@@ -88,7 +89,7 @@ struct AssetsBundleHeader06
 		DWORD ret = 0;
 		if (!strcmp(this->signature, "UnityArchive"))
 			return this->compressedSize;
-		else if (!strcmp(this->signature, "UnityFS"))
+		else if (!strcmp(this->signature, "UnityFS") || !strcmp(this->signature, "UnityWeb"))
 		{
 			ret = (DWORD)strlen(minPlayerVersion) + (DWORD)strlen(fileEngineVersion) + 0x1A;
 			if (this->flags & 0x100)
@@ -185,7 +186,7 @@ class AssetsBundleFile
 		ASSETSTOOLS_API bool Write(AssetsFileReader reader, LPARAM readerPar,
 			AssetsFileWriter writer, LPARAM writerPar,
 			class BundleReplacer **pReplacers, size_t replacerCount, 
-			AssetsFileVerifyLogger errorLogger = NULL);
+			AssetsFileVerifyLogger errorLogger = NULL, ClassDatabaseFile *typeMeta = NULL);
 		ASSETSTOOLS_API bool Unpack(AssetsFileReader reader, LPARAM lPar, AssetsFileWriter writer, LPARAM writerPar);
 		ASSETSTOOLS_API bool Pack(AssetsFileReader reader, LPARAM lPar, AssetsFileWriter writer, LPARAM writerPar);
 		ASSETSTOOLS_API bool IsAssetsFile(AssetsFileReader reader, LPARAM pLPar, AssetsBundleDirectoryInfo06 *pEntry);

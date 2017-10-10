@@ -4,7 +4,7 @@
 #include <vector>
 
 //custom file type to store Unity type information
-#define ClassDatabaseFileVersion 2
+#define ClassDatabaseFileVersion 3
 #define ClassDatabaseCompressionType 1 //LZ4 compress by default
 #define ClassDatabasePackageVersion 0
 
@@ -28,12 +28,13 @@ struct ClassDatabaseTypeField
 	BYTE isArray;
 	DWORD size;
 	//DWORD index;
+	WORD version;
 	DWORD flags2;
 	
 	ASSETSTOOLS_API ClassDatabaseTypeField();
 	ASSETSTOOLS_API ClassDatabaseTypeField(const ClassDatabaseTypeField& other);
-	ASSETSTOOLS_API QWORD Read(AssetsFileReader reader, LPARAM readerPar, QWORD filePos, int version);
-	ASSETSTOOLS_API QWORD Write(AssetsFileWriter writer, LPARAM writerPar, QWORD filePos);
+	ASSETSTOOLS_API QWORD Read(AssetsFileReader reader, LPARAM readerPar, QWORD filePos, int version); //reads version 0,1,2,3
+	ASSETSTOOLS_API QWORD Write(AssetsFileWriter writer, LPARAM writerPar, QWORD filePos, int version); //writes version 1,2,3
 };
 class ClassDatabaseType
 {
@@ -49,7 +50,8 @@ public:
 	ASSETSTOOLS_API ClassDatabaseType(const ClassDatabaseType& other);
 	ASSETSTOOLS_API ~ClassDatabaseType();
 	ASSETSTOOLS_API QWORD Read(AssetsFileReader reader, LPARAM readerPar, QWORD filePos, int version);
-	ASSETSTOOLS_API QWORD Write(AssetsFileWriter writer, LPARAM writerPar, QWORD filePos);
+	ASSETSTOOLS_API QWORD Write(AssetsFileWriter writer, LPARAM writerPar, QWORD filePos, int version);
+	ASSETSTOOLS_API Hash128 MakeTypeHash(ClassDatabaseFile *pDatabaseFile); 
 };
 struct ClassDatabaseFileHeader
 {
@@ -88,10 +90,14 @@ public:
 	char *stringTable;
 
 public:
-
+	
+	ASSETSTOOLS_API QWORD Read(AssetsFileReader reader, LPARAM readerPar, QWORD filePos);
 	ASSETSTOOLS_API bool Read(AssetsFileReader reader, LPARAM readerPar);
 	ASSETSTOOLS_API QWORD Write(AssetsFileWriter writer, LPARAM writerPar, QWORD filePos, int optimizeStringTable=1, DWORD compress=1, bool writeStringTable=true);
 	ASSETSTOOLS_API bool IsValid();
+
+	ASSETSTOOLS_API bool InsertFrom(ClassDatabaseFile *pOther, ClassDatabaseType *pType);
+	ASSETSTOOLS_API void Clear();
 	
 	ASSETSTOOLS_API ClassDatabaseFile();
 	ASSETSTOOLS_API ClassDatabaseFile(const ClassDatabaseFile& other);

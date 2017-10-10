@@ -15,6 +15,7 @@
 #include "AssetsTools\AssetsFileTable.h"
 #include "AssetsTools\AssetsBundleFileFormat.h"
 #include "AssetsTools\ClassDatabaseFile.h"
+#include "TestCode.h"
 
 using namespace std;
 
@@ -29,6 +30,7 @@ string removeQMark(string str)
 
 int main(int argc, char* argv[])
 {	
+	TestCode();
 	string assetsFolderName;
 	if (argc != 2)
 		/*{
@@ -186,4 +188,3 @@ int main(int argc, char* argv[])
 	//getchar();
 	return 0;
 }
-
