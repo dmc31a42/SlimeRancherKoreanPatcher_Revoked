@@ -12,6 +12,9 @@ namespace SlimeRancherKoreanPatcher_cshop
     {
         static string currentDirectory;
         static string SlimeFolderPath;
+        static string[] findResFileName = { "achieve", "actor", "exchange", "global", "keys", "mail", "pedia", "range", "tutorial", "ui" };
+        static int[] findResFileNum = { 2, 1, 3, 0, 1, 0, 2, 4, 1, 1 };
+
         static void Main(string[] args)
         {
             SlimeFolderPath = args[0];
@@ -20,6 +23,9 @@ namespace SlimeRancherKoreanPatcher_cshop
                 new SlimeRancherKoreanPatcher_managedCpp.ManagedPatcherWarp(SlimeFolderPath, currentDirectory);
 
             DownloadCSV();
+            managedPatcher.FindTextAssetOffs(findResFileName, findResFileNum);
+
+            Console.WriteLine("Press any key to exit");
             Console.Read();
         }
 
@@ -35,9 +41,7 @@ namespace SlimeRancherKoreanPatcher_cshop
                 ListCSVURL.Add(CSVURL[i].Split('\\'));
             }
             string tempFolder = @"temp";
-            CreateFolderOrClean(tempFolder);
-            string[] findResFileName = { "achieve", "actor", "exchange", "global", "keys", "mail", "pedia", "range", "tutorial", "ui" };
-            int[] findResFileNum = { 2, 1, 3, 0, 1, 0, 2, 4, 1, 1 };
+            CreateFolderOrClean(tempFolder);  
 
             for (int i = 0; i < ListCSVURL.Count; i++)
             {
