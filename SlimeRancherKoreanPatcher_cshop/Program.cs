@@ -14,17 +14,28 @@ namespace SlimeRancherKoreanPatcher_cshop
         static string SlimeFolderPath;
         static string[] findResFileName = { "achieve", "actor", "exchange", "global", "keys", "mail", "pedia", "range", "tutorial", "ui" };
         static int[] findResFileNum = { 2, 1, 3, 0, 1, 0, 2, 4, 1, 1 };
+        static string[] findSharedFileName = { "OpenSans-Semibold SDF Material", "OpenSans SDF Atlas", "TMP_SDF-Mobile" };
+        static int[] findSharedFileNum = { 0, 0, 0 };
+        static string[] findGlobalFileName = { "TMP_FontAsset" };
+        static int[] findGlobalFileNum = { 0 };
 
         static void Main(string[] args)
         {
             SlimeFolderPath = args[0];
+            Console.WriteLine(SlimeFolderPath);
             currentDirectory = System.IO.Directory.GetCurrentDirectory();
             SlimeRancherKoreanPatcher_managedCpp.ManagedPatcherWarp managedPatcher =
                 new SlimeRancherKoreanPatcher_managedCpp.ManagedPatcherWarp(SlimeFolderPath, currentDirectory);
 
+            SlimeRancherKoreanPatcher_managedCpp.myAssetFileInfo[] temp;
+            
             DownloadCSV();
-            managedPatcher.FindTextAssetOffs(findResFileName, findResFileNum);
+            temp = managedPatcher.FindAssetOffs(
+                findResFileName, findResFileNum,
+                findSharedFileName, findSharedFileNum,
+                findGlobalFileName, findGlobalFileNum);
 
+            
             Console.WriteLine("Press any key to exit");
             Console.Read();
         }
