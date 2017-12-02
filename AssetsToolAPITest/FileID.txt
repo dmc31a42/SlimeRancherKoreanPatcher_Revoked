@@ -1,0 +1,13 @@
+achieve:114
+actor:69
+exchange:146
+global:79
+keys:104
+mail:65
+pedia:101
+range:168
+tutorial:123
+ui:84
+OpenSans-Semibold SDF Material:3
+OpenSans SDF Atlas:11
+TMP_FontAsset:890

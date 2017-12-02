@@ -19,6 +19,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SlimeRancherKoreanPatcher_c
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlimeRancherKoreanPatcher_cshop", "SlimeRancherKoreanPatcher_cshop\SlimeRancherKoreanPatcher_cshop.csproj", "{30CC5047-759E-46A0-86E6-9F8CB22A323F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AssetsToolAPITest", "AssetsToolAPITest\AssetsToolAPITest.vcxproj", "{7B1BF86D-CBB1-4E4B-B7C9-D4925DDE23B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -113,6 +115,14 @@ Global
 		{30CC5047-759E-46A0-86E6-9F8CB22A323F}.Release|Win32.Build.0 = Release|Any CPU
 		{30CC5047-759E-46A0-86E6-9F8CB22A323F}.Release|x64.ActiveCfg = Release|Any CPU
 		{30CC5047-759E-46A0-86E6-9F8CB22A323F}.Release|x64.Build.0 = Release|Any CPU
+		{7B1BF86D-CBB1-4E4B-B7C9-D4925DDE23B6}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{7B1BF86D-CBB1-4E4B-B7C9-D4925DDE23B6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7B1BF86D-CBB1-4E4B-B7C9-D4925DDE23B6}.Debug|Win32.Build.0 = Debug|Win32
+		{7B1BF86D-CBB1-4E4B-B7C9-D4925DDE23B6}.Debug|x64.ActiveCfg = Debug|Win32
+		{7B1BF86D-CBB1-4E4B-B7C9-D4925DDE23B6}.Release|Any CPU.ActiveCfg = Release|Win32
+		{7B1BF86D-CBB1-4E4B-B7C9-D4925DDE23B6}.Release|Win32.ActiveCfg = Release|Win32
+		{7B1BF86D-CBB1-4E4B-B7C9-D4925DDE23B6}.Release|Win32.Build.0 = Release|Win32
+		{7B1BF86D-CBB1-4E4B-B7C9-D4925DDE23B6}.Release|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

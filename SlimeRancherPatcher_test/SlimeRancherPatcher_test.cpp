@@ -144,6 +144,7 @@ int main(int argc, char* argv[])
 	FILE *pAssetsFile = fopen((assetsFileName+backupFileName).c_str(), "rb");
     AssetsFile assetsFile(AssetsReaderFromFile, (LPARAM)pAssetsFile); // I tried &AssetsReaderFromFile too since I'm not sure what's right here but it makes no difference
     AssetsFileTable assetsFileTable(&assetsFile);
+	
 
 	std::vector<AssetsReplacer*> replacors;
 	std::vector<AssetFileInfoEx*> assetsFileInfos;

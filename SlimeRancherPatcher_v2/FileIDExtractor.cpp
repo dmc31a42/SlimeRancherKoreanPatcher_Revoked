@@ -32,8 +32,7 @@ int main(int argc, char* argv[])
 	string assetsFolderName;
 	if (argc != 2)
 		/*{
-			cout << "command Line : SlimeRancherPosExtractor.exe \"FolderName\"" << endl;
-			cout << endl;
+
 
 			cout << "[Manual Mode]" << endl;
 			cout << "Input FolderPath Path to patch : " << endl;
@@ -104,9 +103,9 @@ int main(int argc, char* argv[])
 	AssetsFile sharedAssetsFile(AssetsReaderFromFile, (LPARAM)pSharedAssetsFile); // I tried &AssetsReaderFromFile too since I'm not sure what's right here but it makes no difference
 	AssetsFileTable sharedAssetsFileTable(&sharedAssetsFile);
 
-	const int findSharedLength = 3;
-	string findSharedFileName[findSharedLength] = {"OpenSans-Semibold SDF Material","OpenSans SDF Atlas", "TMP_SDF-Mobile"};
-	int findSharedFileNum[findSharedLength] = {0,0,0};
+	const int findSharedLength = 2;
+	string findSharedFileName[findSharedLength] = {"OpenSans-Semibold SDF Material","OpenSans SDF Atlas"};
+	int findSharedFileNum[findSharedLength] = {0,0};
 	int findSharedFileID[findSharedLength] = {};
 
 	vector<string> sharedFileName;
